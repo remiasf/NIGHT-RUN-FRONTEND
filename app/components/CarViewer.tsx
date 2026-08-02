@@ -8,6 +8,8 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 const FALLBACK_MODEL_URL =
   "https://srnpiccxpucvujhdcgxw.supabase.co/storage/v1/object/public/car-models/question_mark.glb";
 
+const environment = "city" as const;
+
 interface ModelProps {
   modelPath: string;
   scale?: number;
@@ -21,11 +23,10 @@ function Model({ modelPath, scale }: ModelProps) {
 interface CarViewerProps {
   modelPath: string;
   scale?: number;
-  environment?: string;
   fullHeight?: boolean;
 }
 
-export default function CarViewer({ modelPath, scale = 1, environment = "city", fullHeight = false }: CarViewerProps) {
+export default function CarViewer({ modelPath, scale = 1, fullHeight = false }: CarViewerProps) {
   const [resolvedModelUrl, setResolvedModelUrl] = useState<string | null>(null);
 
   useEffect(() => {
