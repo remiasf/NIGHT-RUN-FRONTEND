@@ -106,7 +106,6 @@ export default function CarViewPage({ car }: CarViewPageProps) {
 							<CarViewer
 								modelPath={modelPath}
 								scale={car.scale ?? 1}
-								environment={car.environment ?? "city"}
 								fullHeight
 							/>
 						</div>
